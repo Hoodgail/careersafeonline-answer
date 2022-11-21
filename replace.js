@@ -121,7 +121,7 @@ function multipleChoice() {
         const correctStyle = "border:solid 2px green;";
         const incorrectStyle = "border:solid 2px red;";
 
-        console.log(optionsArray)
+        console.log(optionsArray, KCObject)
 
         for (let i = 0; i < optionsArray.length; i++) {
 
