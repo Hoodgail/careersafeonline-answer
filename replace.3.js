@@ -118,15 +118,16 @@ function multipleChoice() {
         var colVal = (optionsArray.length % 2) === 0 ? 6 : 4;
         var numOnLastRow = (colVal === 4) ? optionsArray.length % 3 : 0;
 
-        const correctStyle = "border:solid 2px green;";
-        const incorrectStyle = "border:solid 2px red;";
+        const correctStyle = "border:solid 2px green !important;";
+        const incorrectStyle = "border:solid 2px red !important;";
 
         console.log(optionsArray, KCObject)
 
         for (let i = 0; i < optionsArray.length; i++) {
 
+            let correct = KCObject._ansKey[currentQuestion] === i;
 
-            $('.question-options').append('<div class="col-sm-' + colVal + ' col-xs-12"><button type="button" class="btn btn-lg activityBtns mc-btn-options option' + i + '" onclick="checkAnswer(' + i + '); return false;">' + optionsArray[i] + '</button></div>');
+            $('.question-options').append(`<div style="${correct ? correctStyle : incorrectStyle}" class="col-sm-` + colVal + ' col-xs-12"><button type="button" class="btn btn-lg activityBtns mc-btn-options option' + i + '" onclick="checkAnswer(' + i + '); return false;">' + optionsArray[i] + '</button></div>');
         }
 
         // If there is one option on the last row, offset by 4 to make it center, and if there are two, offset the first on the row by two to center them both.
