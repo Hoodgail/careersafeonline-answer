@@ -69,6 +69,8 @@ function multipleAnswers() {
 
             let correct = KCObject._ansKey[currentQuestion].includes(i)
 
+            console.log(KCObject._ansKey, KCObject._ansKey[currentQuestion], i, correct)
+
             if (correct) {
                 setTimeout(() => {
                     toggleSelect(i)
