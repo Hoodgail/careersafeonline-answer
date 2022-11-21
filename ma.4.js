@@ -65,20 +65,24 @@ function multipleAnswers() {
         //Answer Options Set-Up
         var optionsArray = questionName.getOptions().slice();
 
+        const correctStyle = "border:solid 2px green !important;";
+        const incorrectStyle = "border:solid 2px red !important;";
+
+
         for (var i = 0; i < optionsArray[currentQuestion].length; i++) {
 
             let correct = KCObject._ansKey[currentQuestion].includes(i)
 
             console.log(KCObject._ansKey, KCObject._ansKey[currentQuestion], i, correct)
 
-            if (correct) {
-                setTimeout(() => {
-                    toggleSelect(i)
-                }, 1000)
-            }
+            // if (correct) {
+            //     setTimeout(() => {
+            //         toggleSelect(i)
+            //     }, 1000)
+            // }
 
             //write out only the amount of options available
-            $('.question-options').append("<div class=\"ma-opt-container\"><div class=\"ma-cont\"><div class=\"ma-selector\"></div><div class=\"ma-btn-container\"><button type=\"button\" class=\"btn btn-lg activityBtns ma-btn-options option" + i + "\" aria-pressed=\"false\" onclick=\"toggleSelect(" + i + "); return false;\">" + optionsArray[currentQuestion][i] + "</button></div></div></div>");
+            $('.question-options').append(`<div style="${correct ? correctStyle : incorrectStyle}" class=\"ma-opt-container\"><div class=\"ma-cont\"><div class=\"ma-selector\"></div><div class=\"ma-btn-container\"><button type=\"button\" class=\"btn btn-lg activityBtns ma-btn-options option" + i + "\" aria-pressed=\"false\" onclick=\"toggleSelect(` + i + "); return false;\">" + optionsArray[currentQuestion][i] + "</button></div></div></div>");
         }
     }
 
