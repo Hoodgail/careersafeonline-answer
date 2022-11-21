@@ -82,7 +82,7 @@ function multipleAnswers() {
             // }
 
             //write out only the amount of options available
-            $('.question-options').append(`<div style="${correct ? correctStyle : incorrectStyle}" class=\"ma-opt-container\"><div class=\"ma-cont\"><div class=\"ma-selector\"></div><div class=\"ma-btn-container\"><button type=\"button\" class=\"btn btn-lg activityBtns ma-btn-options option" + i + "\" aria-pressed=\"false\" onclick=\"toggleSelect(` + i + "); return false;\">" + optionsArray[currentQuestion][i] + "</button></div></div></div>");
+            $('.question-options').append(`<div style="${correct ? correctStyle : incorrectStyle}" class=\"ma-opt-container\"><div class=\"ma-cont\"><div class=\"ma-selector\"></div><div class=\"ma-btn-container\"><button type=\"button\" class=\"btn btn-lg activityBtns ma-btn-options option` + i + "\" aria-pressed=\"false\" onclick=\"toggleSelect(" + i + "); return false;\">" + optionsArray[currentQuestion][i] + "</button></div></div></div>");
         }
     }
 
