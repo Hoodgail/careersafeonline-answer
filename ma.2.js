@@ -67,7 +67,7 @@ function multipleAnswers() {
 
         for (var i = 0; i < optionsArray[currentQuestion].length; i++) {
 
-            let correct = KCObject._ansKey[currentQuestion] === i;
+            let correct = KCObject._ansKey[currentQuestion].includes(i)
 
             if (correct) {
                 setTimeout(() => {
